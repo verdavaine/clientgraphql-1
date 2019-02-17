@@ -9,6 +9,7 @@ export default (state) => (
 			signingIn={state.signingIn}
 			me={state.me}
 			loadingUsers={state.loadingUsers}
+			auth={state.auth}
 		/>
 		<Users
 			totalUsers={state.totalUsers}

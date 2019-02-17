@@ -75,7 +75,7 @@ export const refetch = (state) => [
 
 const addFakeUser = (state) => [
 	state,
-	<RequestGraphql query={addFake} variables={{ count: 5 }} action={populateFakeUsers} />
+	<RequestGraphql query={addFake} variables={{ count: 1 }} action={populateFakeUsers} />
 ];
 
 export const addUser = (state, data) => ({

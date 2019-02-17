@@ -26,6 +26,11 @@ app({
 			category: 'PORTRAIT', 
 			file: null, 
 			route:{} 
+		},
+		auth: {
+			name: '',
+			email: '',
+			password: ''
 		} 
 	}),
 	subscriptions: state => console.log (state) || [
