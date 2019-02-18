@@ -46,7 +46,7 @@ const removeToken = (state) => [
 
 const RequestGithubCode = (state) => [
 	state,
-	<SetLocation location='https://github.com/login/oauth/authorize?client_id=da0d9e8948ca42fa121e&scope=user' />
+	<SetLocation location={'https://github.com/login/oauth/authorize?client_id='+process.env.GITHUB_CLIENT_ID+'&scope=user'} />
 ];
 
 const RequestFacebookCode = (state) => {
@@ -54,7 +54,7 @@ const RequestFacebookCode = (state) => {
 	localStorage.setItem('st', st);
 	return [
 		state,
-		<SetLocation location={'https://www.facebook.com/v3.2/dialog/oauth?client_id=553813528451746&redirect_uri=http://localhost:3000/&state='+st} />
+		<SetLocation location={'https://www.facebook.com/v3.2/dialog/oauth?client_id='+process.env.FACEBOOK_CLIENT_ID+'&redirect_uri=http://localhost:3000/&state='+st} />
 	];
 };
 

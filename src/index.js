@@ -11,6 +11,8 @@ export const pages = {
 	NotFound: import('./NotFound')
 }
 
+console.log ('env : '+process.env.GITHUB_CLIENT_ID);
+
 app({
 	init: testCode({ 
 		signingIn: false, 
