@@ -38156,7 +38156,7 @@ var removeToken = function removeToken(state) {
 
 var RequestGithubCode = function RequestGithubCode(state) {
   return [state, (0, _hyperapp.h)(_effects.SetLocation, {
-    location: "https://github.com/login/oauth/authorize?client_id=da0d9e8948ca42fa121e&scope=user"
+    location: "https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&scope=user"
   })];
 };
 
@@ -38164,7 +38164,7 @@ var RequestFacebookCode = function RequestFacebookCode(state) {
   var st = Math.random();
   localStorage.setItem('st', st);
   return [state, (0, _hyperapp.h)(_effects.SetLocation, {
-    location: 'https://www.facebook.com/v3.2/dialog/oauth?client_id=553813528451746&redirect_uri=http://localhost:3000/&state=' + st
+    location: 'https://www.facebook.com/v3.2/dialog/oauth?client_id=${process.env.FACEBOOK_CLIENT_ID}&redirect_uri=http://localhost:3000/&state=' + st
   })];
 };
 
@@ -38520,7 +38520,7 @@ var pages = {
   NotFound: require("_bundle_loader")(require.resolve('./NotFound'))
 };
 exports.pages = pages;
-console.log("development");
+console.log('env : ' + "da0d9e8948ca42fa121e");
 (0, _hyperapp.app)({
   init: (0, _AuthorizedUser.testCode)({
     signingIn: false,
@@ -38595,7 +38595,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39603" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44233" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
